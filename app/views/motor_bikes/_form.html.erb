@@ -1,0 +1,17 @@
+<%= form_with(model: motor_bike, local: true) do |form| %>
+  <% if motor_bike.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(motor_bike.errors.count, "error") %> prohibited this motor_bike from being saved:</h2>
+
+      <ul>
+      <% motor_bike.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
